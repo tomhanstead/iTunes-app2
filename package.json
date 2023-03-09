@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "netlify deploy --prod",
+    "test": "mocha",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "postbuild": "npm install --prefix frontend && frontend && npm run build --prefix frontend"
+  },
+  "author": "Tracey Turner",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "netlify-cli": "^13.0.1",
+    "node-fetch": "^2.6.7",
+    "request": "^2.88.2",
+    "serverless-http": "^3.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "jest": "^27.5.1",
+    "mocha": "^9.2.0",
+    "nodemon": "^2.0.14",
+    "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "engines": {
+    "node": "14.17.6",
+    "npm": "6.14.15"
+  }
+}
